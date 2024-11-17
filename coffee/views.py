@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from . models import Coffee
 # Create your views here.
 def home(request):
-    return HttpResponse('<h1>Home Page</h1>')
+    coffee = Coffee.objects.all()
+    return render(request, 'home.html',{'coffee':coffee})

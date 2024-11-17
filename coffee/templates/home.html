@@ -1,0 +1,9 @@
+<h1>Welcome to our Coffee Shop here we got your test</h1>
+
+<ul>
+    {%for coffee in coffee%}
+    <li>{{coffee.name}}</li>
+    <li>(${{coffee.price}})</li>
+    <li>{{coffee.quantity}}</li>
+    {%endfor%}
+</ul>
