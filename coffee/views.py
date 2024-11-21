@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . models import Coffee
-# Create your views here.
+from . models import Coffee, Product
+
+
+
 def home(request):
+    products = Product.objects.all()
     coffee = Coffee.objects.all()
-    return render(request, 'home.html',{'coffee':coffee})
+    return render(request, 'home.html', {'products':products})

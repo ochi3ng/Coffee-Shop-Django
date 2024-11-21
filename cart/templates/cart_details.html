@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Your Cart</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Your Cart</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Coffee</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.coffee.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.coffee.price }}</td>
+                <td>${{ item.total_price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Total: ${{ total }}</h3>
+    <a href="#" class="btn btn-success">Checkout</a>
+</div>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
